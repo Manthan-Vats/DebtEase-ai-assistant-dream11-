@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at center, #0f0f0f, #070707);
+  color: #f0f0f0;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+nav {
+  width: 250px;
+  background: #1a1a1a;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.nav-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.nav-links a {
+  display: block;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: #ccc;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+  background: #333;
+  color: #fff;
+}
+
+.main-content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.iframe-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  /* Removed pointer-events: none to allow interaction */
+}
+
+.iframe-bg iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem;
+  background: rgba(0, 0, 0, 0.6);
+  pointer-events: none; /* Allow clicks to pass through to iframe */
+}
+
+.overlay-content h1,
+.overlay-content p {
+  pointer-events: auto; /* Restore interactions for text */
+}
+
+.overlay-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.highlight-text {
+  background: linear-gradient(to right, #ffffff, #a6cbf7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.overlay-content p {
+  font-size: 1.2rem;
+  color: #aaa;
+  max-width: 600px;
+}
+
+@media (max-width: 768px) {
+  nav {
+    width: 100px;
+  }
+
+  .nav-header {
+    font-size: 1.2rem;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+
+  .overlay-content {
+    padding: 2rem;
+  }
+
+  .overlay-content h1 {
+    font-size: 2rem;
+  }
+
+  .overlay-content p {
+    font-size: 1rem;
+  }
+}
