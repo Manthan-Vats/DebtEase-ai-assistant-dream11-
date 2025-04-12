@@ -92,7 +92,7 @@ Once the backend is running, visit `http://localhost:8000/docs` for the interact
 
 ## Testing
 
-- Backend tests: `pytest`
+- Backend tests: `postman`
 - API testing: Use the provided Postman collection in `docs/postman/`
 
 ## License
